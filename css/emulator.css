@@ -1,0 +1,85 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+
+/* Body */
+.device-body{
+  margin: 25px auto 0 auto;
+  padding-top: 25px;
+  width: 300px;
+  height: 560px;
+  background-image: url('../img/device-body.png');
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* Status bar */
+.device-statusbar{
+  margin: 42px auto 20px auto;
+  width: 90%;
+  height: 20px;
+  background-color: #111;
+  opacity:0.8;
+}
+
+#timer{
+  color: #c2e2f9;
+  float: right;
+  font-weight: lighter;
+  font-size: 12px;
+  margin: 4px 5px 0 0;
+}
+
+/* Screen */
+.device-screen{
+  margin: 0 auto;
+  width: 75%;
+  border: 5px solid #555;
+  background-color: #c2e2f9;
+}
+
+.device-screen p{
+  font-family: 'Inconsolata', sans-serif;
+  line-height: 2px;
+  margin-left: 12px;
+  font-size: 20px;
+}
+
+/* Keyboard */
+.device-keyboard{
+  margin: 0 auto;
+  width: 78%;
+  text-align: center;
+}
+
+.device-keyboard button{
+  outline: none;
+  border: none;
+  width: 60px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.device-keyboard button:active{
+  margin-top: 2px;
+  margin-bottom: -2px;
+}
+
+.device-keyboard .left{ float: left; }
+.device-keyboard .right{ float: right; }
+
+.extra-keys{
+  margin-top: -5px;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.extra-keys button:active, .number-keys button:active{
+  background-color: #999;
+}
+
+.action-keys{
+  margin-top: 30px;
+}
+
+.device-keyboard #btn-cancel{ background-color: #a42e24; }
+.device-keyboard #btn-back{ background-color: #e5b723; }
+.device-keyboard #btn-enter{ background-color: #298a43; }
