@@ -72,10 +72,6 @@
   font-size: 14px;
 }
 
-.extra-keys button:active, .number-keys button:active{
-  background-color: #999;
-}
-
 .action-keys{
   margin-top: 30px;
 }
@@ -83,3 +79,30 @@
 .device-keyboard #btn-cancel{ background-color: #a42e24; }
 .device-keyboard #btn-back{ background-color: #e5b723; }
 .device-keyboard #btn-enter{ background-color: #298a43; }
+
+@media screen and (max-width: 600px) {
+  html, body { overflow: hidden; }
+
+  body { background-color: #272b36; }
+
+  .device-body{
+    width: 100%;
+    margin-top: 7px;
+    padding-top: 0;
+    background-image: none;
+  }
+  .device-statusbar{ display: none; }
+  #timer{ display: none; }
+
+  .number-keys button, .action-keys button{
+    width: 74px;
+    height: 39px;
+    font-size: 22px;
+  }
+
+  .number-keys p{
+    margin: 10px 0;
+  }
+
+  .action-keys{ margin-top: 0; }
+}
