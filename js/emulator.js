@@ -3,46 +3,74 @@ $(document).ready(function() {
 
   var isKeyboardHidden = false;
 
-  // Extra keys
-  $('#btn-menu').fastClick(function () { display(5, 'menu was pressed'); });
-  $('#btn-alpha').fastClick(function () { display(5, 'alpha was pressed'); });
-  $('#btn-hide').fastClick(function () {
-    display(5, 'hide was pressed');
-    $('.extra-keys').fadeOut();
-    $('.number-keys').fadeOut(function(){
-      $('.device-screen').height(330);
-      isKeyboardHidden = true;
-    });
-  });
+  $('.device-keyboard button').fastClick(function (e) {
+    var keyValue = e.target.id.split('-')[1];
+    var keyCode = charCode(keyValue)
+    var msg = keyCode + ' was pressed';
 
-  // Number keys
-  $('#btn-0').fastClick(function () { display(5, '0 was pressed'); });
-  $('#btn-1').fastClick(function () { display(5, '1 was pressed'); });
-  $('#btn-2').fastClick(function () { display(5, '2 was pressed'); });
-  $('#btn-3').fastClick(function () { display(5, '3 was pressed'); });
-  $('#btn-4').fastClick(function () { display(5, '4 was pressed'); });
-  $('#btn-5').fastClick(function () { display(5, '5 was pressed'); });
-  $('#btn-6').fastClick(function () { display(5, '6 was pressed'); });
-  $('#btn-7').fastClick(function () { display(5, '7 was pressed'); });
-  $('#btn-8').fastClick(function () { display(5, '8 was pressed'); });
-  $('#btn-9').fastClick(function () { display(5, '9 was pressed'); });
-  $('#btn-asterisc').fastClick(function () { display(5, '* was pressed'); });
-  $('#btn-sharp').fastClick(function () { display(5, '# was pressed'); });
+    try{
+      // Android call
+      Android.setKeyCode(keyCode);
+    }
+    catch(err){
+      console.log(err);
+    }
 
-  // Action keys
-  $('#btn-cancel').fastClick(function () {
-    display(5, 'cancel was pressed');
-    if(isKeyboardHidden){
-      $('.device-screen').height(130);
-      $('.extra-keys').fadeIn();
-      $('.number-keys').fadeIn(function(){
-        isKeyboardHidden = false;
-      });
+    display(5, msg);
+
+    switch(keyCode) {
+      case 666:
+        // hide
+        hideKeyboard();
+        break;
+      case 27:
+        // cancel
+        displayKeyboard();
+        break;
+      default:
+        return;
     }
   });
-  $('#btn-back').fastClick(function () { display(5, 'back was pressed'); });
-  $('#btn-enter').fastClick(function () { display(5, 'enter was pressed'); });
 });
+
+function charCode(key){
+  switch(key) {
+    case "back":
+      return 8;
+    case "enter":
+      return 13;
+    case "cancel":
+      return 27;
+    case "hide":
+      return 666;
+    case "menu":
+      return 777;
+    case "alpha":
+      return 888;
+    case "hide":
+      return 999;
+    default:
+      return key.charCodeAt(0);
+  }
+}
+
+function hideKeyboard(){
+  $('.extra-keys').fadeOut();
+  $('.number-keys').fadeOut(function(){
+    $('.device-screen').height(330);
+    isKeyboardHidden = true;
+  });
+}
+
+function displayKeyboard(){
+  if(isKeyboardHidden){
+    $('.device-screen').height(130);
+    $('.extra-keys').fadeIn();
+    $('.number-keys').fadeIn(function(){
+      isKeyboardHidden = false;
+    });
+  }
+}
 
 function display(line, message){
   $('#line-' + line).html(message);
