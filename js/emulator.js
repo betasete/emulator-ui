@@ -57,7 +57,7 @@ function charCode(key){
 function hideKeyboard(){
   $('.extra-keys').fadeOut();
   $('.number-keys').fadeOut(function(){
-    $('.device-screen').height(330);
+    $('.device-screen').height(348);
     isKeyboardHidden = true;
   });
 }
