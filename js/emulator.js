@@ -33,11 +33,18 @@ $(document).ready(function() {
   });
 
   // Style options
+  var customStyle = window.location.hash;
+
+  if(customStyle.indexOf("#") > 0) {
+    $("a").removeClass("selected");
+    $("#custom-emulator").attr("href", "css/" + customStyle.substring(1) + ".css");
+    $("#custom-" + customStyle.substring(1)).addClass("selected");
+  }
+
   $("#options li a").click(function() {
     $("#custom-emulator").attr("href",$(this).attr('rel'));
     $("a").removeClass("selected");
     $(this).addClass("selected");
-    return false;
   });
 });
 
