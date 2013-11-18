@@ -31,6 +31,14 @@ $(document).ready(function() {
         return;
     }
   });
+
+  // Style options
+  $("#options li a").click(function() {
+    $("#custom-emulator").attr("href",$(this).attr('rel'));
+    $("a").removeClass("selected");
+    $(this).addClass("selected");
+    return false;
+  });
 });
 
 function charCode(key){

@@ -1,0 +1,48 @@
+/* Keyboard */
+.device-keyboard p{
+  margin: 8px auto;
+}
+
+.device-keyboard{
+  margin: 0 auto;
+  width: 78%;
+  text-align: center;
+}
+
+.device-keyboard button{
+  outline: none;
+  border: none;
+  width: 65px;
+  border-radius: 3px;
+}
+
+.device-keyboard button:active{
+  margin-top: 2px;
+  margin-bottom: -2px;
+}
+
+.device-keyboard .left{ float: left; }
+.device-keyboard .right{ float: right; }
+
+.extra-keys{
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.number-keys button, .action-keys button{
+  height: 35px;
+  font-size: 22px;
+}
+
+.action-keys{
+  margin-top: 20px;
+}
+
+.action-keys button{
+  text-shadow: 0px -1px #181A20;
+  color: #fff;
+}
+
+.device-keyboard #btn-cancel{ background-color: #a42e24; }
+.device-keyboard #btn-back{ background-color: #e5b723; }
+.device-keyboard #btn-enter{ background-color: #298a43; }
