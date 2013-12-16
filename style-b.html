@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+    <title>CloudWalk Emulator</title>
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/emulator.css">
+    <link rel="stylesheet" href="css/style-b.css" id="custom-emulator">
+
+    <script src="js/html5.min.js" type="text/javascript"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/emulator.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <ul id="options">
+      <li><a href="style-a.html">Style A</a></li>
+      <li><a href="style-b.html" class="selected">Style B</a></li>
+      <li><a href="style-c.html">Style C</a></li>
+      <li><a href="style-d.html">Style D</a></li>
+    </ul>
+
+    <div class="device-body">
+      <div class="device-statusbar"><span id="timer"/></div>
+      <div class="device-screen">
+        <p id="line-1">1. RECARGA</p>
+        <p id="line-2">2. PRIVATE LABEL</p>
+        <p id="line-3">3. CRÉDITO E DÉBITO</p>
+        <p id="line-4">&nbsp;</p>
+        <p id="line-5">&nbsp;</p>
+      </div>
+      <div class="device-keyboard">
+        <div class="extra-keys">
+          <p><button id="btn-menu" class="left">Menu</button> <button id="btn-alpha">Alpha</button> <button id="btn-hide" class="right">Hide</button></p>
+        </div>
+        <div class="number-keys">
+          <p><button id="btn-1" class="left">1</button> <button id="btn-2">2</button> <button id="btn-3" class="right">3</button></p>
+          <p><button id="btn-4" class="left">4</button> <button id="btn-5">5</button> <button id="btn-6" class="right">6</button></p>
+          <p><button id="btn-7" class="left">7</button> <button id="btn-8">8</button> <button id="btn-9" class="right">9</button></p>
+          <p><button id="btn-asterisc" class="left">*</button> <button id="btn-0">0</button> <button id="btn-sharp" class="right">#</button></p>
+        </div>
+        <div class="action-keys">
+          <p><button id="btn-cancel" class="left">×</button> <button id="btn-back">←</button> <button id="btn-enter" class="right">↵</button></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
