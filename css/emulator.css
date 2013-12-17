@@ -57,6 +57,9 @@
 }
 
 /* Keyboard */
+
+*{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+
 button{
   outline: none;
   border: none;
