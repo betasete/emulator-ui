@@ -81,11 +81,6 @@ button{
   height: 100%;
 }
 
-.device-keyboard button:active{
-  margin-top: 2px;
-  margin-bottom: -2px;
-}
-
 .device-keyboard .left{ float: left; }
 .device-keyboard .right{ float: right; }
 
