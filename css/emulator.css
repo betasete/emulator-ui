@@ -46,20 +46,70 @@
   font-size: 20px;
 }
 
-/* Layout options menu */
-ul {
-  margin: 0 auto;
-  text-align: center;
-}
-ul li{
-  list-style: none;
-  display: inline-block;
-  margin-top: 10px;
+/* Screen */
+.device-screen{
+  width: 82%;
 }
 
-a { padding: 10px; }
-a, a:visited { color: #1642c7 }
-a.selected { background-color: #a9bbf2; }
+.device-screen p{
+  letter-spacing: 0px;
+  font-size: 21px;
+}
+
+/* Keyboard */
+button{
+  outline: none;
+  border: none;
+  width: 55px;
+  height: 55px;
+  border-radius: 50px;
+  color: #000;
+  font-size: 26px;
+}
+
+.device-keyboard{
+  margin: 0 auto;
+  width: 83%;
+  text-align: center;
+  height: 250px;
+  margin-top: 15px;
+}
+
+.device-keyboard table{
+  width: 100%;
+  height: 100%;
+}
+
+.device-keyboard button:active{
+  margin-top: 2px;
+  margin-bottom: -2px;
+}
+
+.device-keyboard .left{ float: left; }
+.device-keyboard .right{ float: right; }
+
+.extra-keys{
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.number-keys button, .action-keys button{
+  height: 35px;
+  font-size: 22px;
+}
+
+.action-keys{
+  margin-top: 20px;
+}
+
+.action-keys button{
+  text-shadow: 0px -1px #181A20;
+  color: #fff;
+}
+
+.device-keyboard #btn-cancel{ color: #fff; background-color: #a42e24; }
+.device-keyboard #btn-back{ color: #fff; background-color: #e5b723; }
+.device-keyboard #btn-enter{ color: #fff; background-color: #298a43; }
 
 @media screen and (max-width: 600px) {
   html, body { overflow: hidden; }
