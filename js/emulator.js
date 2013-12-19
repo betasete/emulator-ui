@@ -1,7 +1,9 @@
 $(document).ready(function() {
   timer();
+  init();
 
   var isKeyboardHidden = false;
+  var currentStep = 0;
 
   $('.device-keyboard button').fastClick(function (e) {
     var keyValue = e.target.id.split('-')[1];
@@ -16,22 +18,94 @@ $(document).ready(function() {
       console.log(err);
     }
 
-    display(5, msg);
+    // Just a demo navigation, should be removed
+
+    // Recarga
+    if(currentStep == 0 && keyCode == 49){
+      display(1, "** RECARGA **");
+      display(2, "&nbsp;");
+      display(3, "Valor da recarga:");
+      display(4, "&nbsp;");
+      display(5, "$ ");
+      return currentStep++;
+    }
+
+    // Recarga
+    if(currentStep == 0 && keyCode == 50){
+      display(1, "** PRIVATE LABEL **");
+      display(2, "&nbsp;");
+      display(3, "Valor da compra:");
+      display(4, "&nbsp;");
+      display(5, "$ ");
+      return currentStep++;
+    }
+
+    // Crédito e débito
+    if(currentStep == 0 && keyCode == 51){
+      display(1, "** CRÉDITO/DÉBITO **");
+      display(2, "&nbsp;");
+      display(3, "Valor da operação:");
+      display(4, "&nbsp;");
+      display(5, "$ ");
+      return currentStep++;
+    }
+
+    if(currentStep == 0){
+      return;
+    }
 
     switch(keyCode) {
-      case 666:
-        // hide
-        hideKeyboard();
+      case 8:
+        if($("#line-5").text().length > 2)
+          display(5, $("#line-5").text().slice(0, -1));
         break;
       case 27:
-        // cancel
-        displayKeyboard();
+        currentStep = 0;
+        init();
+        break;
+      case 48:
+        display(5, $("#line-5").text() + '0');
+        break;
+      case 49:
+        display(5, $("#line-5").text() + '1');
+        break;
+      case 50:
+        display(5, $("#line-5").text() + '2');
+        break;
+      case 51:
+        display(5, $("#line-5").text() + '3');
+        break;
+      case 52:
+        display(5, $("#line-5").text() + '4');
+        break;
+      case 53:
+        display(5, $("#line-5").text() + '5');
+        break;
+      case 54:
+        display(5, $("#line-5").text() + '6');
+        break;
+      case 55:
+        display(5, $("#line-5").text() + '7');
+        break;
+      case 56:
+        display(5, $("#line-5").text() + '8');
+        break;
+      case 57:
+        display(5, $("#line-5").text() + '9');
         break;
       default:
         return;
-    }
+     }
   });
 });
+
+function init(){
+  display(1, "1. RECARGA");
+  display(2, "2. PRIVATE LABEL");
+  display(3, "3. CRÉDITO E DÉBITO");
+  display(4, "&nbsp;");
+  display(5, "&nbsp;");
+}
 
 function charCode(key){
   switch(key) {
@@ -51,24 +125,6 @@ function charCode(key){
       return 999;
     default:
       return key.charCodeAt(0);
-  }
-}
-
-function hideKeyboard(){
-  $('.extra-keys').fadeOut();
-  $('.number-keys').fadeOut(function(){
-    $('.device-screen').height(348);
-    isKeyboardHidden = true;
-  });
-}
-
-function displayKeyboard(){
-  if(isKeyboardHidden){
-    $('.device-screen').height(130);
-    $('.extra-keys').fadeIn();
-    $('.number-keys').fadeIn(function(){
-      isKeyboardHidden = false;
-    });
   }
 }
 
