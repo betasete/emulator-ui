@@ -68,6 +68,12 @@ button{
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+button:active{
+  margin-top: 1px;
+  margin-bottom: -1px;
+  background-color: #a0a0a0;
+}
+
 .device-keyboard{
   margin: 0 auto;
   width: 83%;
@@ -92,6 +98,10 @@ button{
 #btn-cancel{ background-color: #a42e24; }
 #btn-back  { background-color: #e5b723; }
 #btn-enter { background-color: #298a43; }
+
+#btn-cancel:active{ background-color: #8d271e; }
+#btn-back:active  { background-color: #d0a61d; }
+#btn-enter:active { background-color: #217438; }
 
 @media screen and (max-width: 600px) {
   html, body { overflow: hidden; }
