@@ -2,7 +2,7 @@
 
 .content {
   margin: 0 auto;
-  width: 700px;
+  width: 800px;
 }
 
 /* Body */
@@ -111,8 +111,8 @@ button:active{
 
 #printer{
   float: left;
-  width: 305px;
-  height: 540px;
+  width: 380px;
+  height: 560px;
 }
 
 @media screen and (max-width: 600px) {
