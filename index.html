@@ -6,55 +6,58 @@
 
     <title>CloudWalk Emulator</title>
 
-    <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/emulator.css">
+    <link type="text/css" rel="stylesheet" href="css/normalize.min.css">
+    <link type="text/css" rel="stylesheet" href="css/emulator.css">
 
-    <script src="js/html5.min.js" type="text/javascript"></script>
-    <script src="js/jquery.min.js" type="text/javascript"></script>
-    <script src="js/emulator.js" type="text/javascript"></script>
-
+    <script type="text/javascript" src="js/html5.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/emulator.js"></script>
   </head>
   <body>
-    <div class="device-body">
-      <div class="device-statusbar"><span id="timer"/></div>
-      <div class="device-screen">
-        <p id="line-0">&nbsp;</p>
-        <p id="line-1">&nbsp;</p>
-        <p id="line-2">&nbsp;</p>
-        <p id="line-3">&nbsp;</p>
-        <p id="line-4">&nbsp;</p>
-        <p id="line-5">&nbsp;</p>
-        <p id="line-6">&nbsp;</p>
-        <p id="line-7">&nbsp;</p>
+    <div class="content">
+      <div class="device-body">
+        <div class="device-statusbar"><span id="timer"/></div>
+        <div class="device-screen">
+          <p id="line-0">&nbsp;</p>
+          <p id="line-1">&nbsp;</p>
+          <p id="line-2">&nbsp;</p>
+          <p id="line-3">&nbsp;</p>
+          <p id="line-4">&nbsp;</p>
+          <p id="line-5">&nbsp;</p>
+          <p id="line-6">&nbsp;</p>
+          <p id="line-7">&nbsp;</p>
+        </div>
+        <div class="device-keyboard">
+          <table>
+            <tr>
+              <td><button id="btn-1">1</button></td>
+              <td><button id="btn-2">2</button></td>
+              <td><button id="btn-3">3</button></td>
+              <td><button id="btn-func">F</button></td>
+            </tr>
+            <tr>
+              <td><button id="btn-4">4</button></td>
+              <td><button id="btn-5">5</button></td>
+              <td><button id="btn-6">6</button></td>
+              <td><button id="btn-cancel" class="action-key">×</button></td>
+            </tr>
+            <tr>
+              <td><button id="btn-7">7</button></td>
+              <td><button id="btn-8">8</button></td>
+              <td><button id="btn-9">9</button></td>
+              <td><button id="btn-back" class="action-key">←</button></td>
+            </tr>
+            <tr>
+              <td><button id="btn-sharp">#</button></td>
+              <td><button id="btn-0">0</button></td>
+              <td><button id="btn-dot">.</button></td>
+              <td><button id="btn-enter" class="action-key">↵</button></td>
+            </tr>
+          </table>
+        </div>
       </div>
-      <div class="device-keyboard">
-        <table>
-          <tr>
-            <td><button id="btn-1">1</button></td>
-            <td><button id="btn-2">2</button></td>
-            <td><button id="btn-3">3</button></td>
-            <td><button id="btn-func">F</button></td>
-          </tr>
-          <tr>
-            <td><button id="btn-4">4</button></td>
-            <td><button id="btn-5">5</button></td>
-            <td><button id="btn-6">6</button></td>
-            <td><button id="btn-cancel" class="action-key">×</button></td>
-          </tr>
-          <tr>
-            <td><button id="btn-7">7</button></td>
-            <td><button id="btn-8">8</button></td>
-            <td><button id="btn-9">9</button></td>
-            <td><button id="btn-back" class="action-key">←</button></td>
-          </tr>
-          <tr>
-            <td><button id="btn-sharp">#</button></td>
-            <td><button id="btn-0">0</button></td>
-            <td><button id="btn-dot">.</button></td>
-            <td><button id="btn-enter" class="action-key">↵</button></td>
-          </tr>
-        </table>
-      </div>
+
+      <iframe src="printer.html" id="printer" frameborder="0"></iframe>
     </div>
   </body>
 </html>

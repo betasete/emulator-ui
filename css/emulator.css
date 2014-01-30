@@ -1,14 +1,20 @@
 @import url(http://fonts.googleapis.com/css?family=Inconsolata);
 
+.content {
+  margin: 0 auto;
+  width: 700px;
+}
+
 /* Body */
 .device-body{
-  margin: 25px auto 0 auto;
+  margin: 25px;
   padding-top: 25px;
   width: 300px;
   height: 560px;
   background-image: url('../img/device-body.png');
   -moz-border-radius: 5px;
   border-radius: 5px;
+  float: left;
 }
 
 /* Status bar */
@@ -103,10 +109,18 @@ button:active{
 #btn-back:active  { background-color: #d0a61d; }
 #btn-enter:active { background-color: #217438; }
 
+#printer{
+  float: left;
+  width: 305px;
+  height: 540px;
+}
+
 @media screen and (max-width: 600px) {
   html, body { overflow: hidden; }
 
   body { background-color: #272b36; }
+
+  .content{ width: auto; }
 
   .device-body{
     width: 100%;
@@ -129,7 +143,5 @@ button:active{
     width: 100%;
   }
 
-  .device-statusbar{ display: none; }
-
-  #timer{ display: none; }
+  .device-statusbar, #timer, #printer{ display: none; }
 }

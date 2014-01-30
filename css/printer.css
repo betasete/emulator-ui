@@ -1,0 +1,30 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+
+body {
+  margin: 30px 0 0 20px;
+  font-family: 'Inconsolata', sans-serif;
+  overflow: hidden;
+}
+
+#paper {
+  background-image: url('../img/paper.png');
+  min-height: 490px;
+  padding-top: 15px;
+}
+
+#paper p {
+  padding: 0 0 0 10px;
+  margin: 2px 0 0 0;
+  font-size: 12px;
+}
+
+#paper p.big {
+  font-size: 16px;
+  font-weight: bolder;
+  letter-spacing: 3px;
+}
+
+.separator {
+  height: 30px;
+  color: #999;
+}
