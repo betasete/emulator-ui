@@ -1,8 +1,14 @@
+var alphaHitCount = 0;
+var currentStep = 0;
+var currentKey = 0;
+  
 $(document).ready(function() {
   timer();
   init();
 
-  var currentStep = 0;
+  $('.device-keyboard button small').fastClick(function (e) {
+    $(e.target).parents('button').click();
+  });  
 
   $('.device-keyboard button').fastClick(function (e) {
     var keyValue = e.target.id.split('-')[1];
@@ -15,9 +21,9 @@ $(document).ready(function() {
     catch(err){
       console.log(err);
     }
-
+    
     // Just a demo navigation, should be removed
-
+    
     // Recarga
     if(currentStep == 0 && keyCode == 49){
       display(0, "** RECARGA **");
@@ -52,13 +58,16 @@ $(document).ready(function() {
       return;
     }
 
+    if(keyCode != 8 && keyCode != 13 && keyCode != 35 && keyCode != 46 && keyCode != 777 && keyCode != 888){
+      currentKey = keyCode;
+      alphaHitCount = 0;
+    }
+
     switch(keyCode) {
       case 8:
-        if($("#line-4").text().length > 2)
-          display(4, $("#line-4").text().slice(0, -1));
+        backspace();
         break;
       case 27:
-        currentStep = 0;
         init();
         break;
       case 48:
@@ -91,13 +100,52 @@ $(document).ready(function() {
       case 57:
         display(4, $("#line-4").text() + '9');
         break;
+      case 888:
+        if(currentKey > 0) handleAlphaKey();
       default:
         return;
      }
   });
 });
 
+function handleAlphaKey(){
+  var alphaKeys = {
+    46 : [",", "'", "\"", "."],
+    48 : ["-", "_", "S", "s", "P", "p", "0"],
+    49 : ["Q", "q", "Z", "z", ".", "1"],
+    50 : ["A", "a", "B", "b", "C", "c", "2"],
+    51 : ["D", "d", "E", "e", "F", "f", "3"],
+    52 : ["G", "g", "H", "h", "I", "i", "4"],
+    53 : ["J", "j", "K", "k", "L", "l", "5"],
+    54 : ["M", "m", "N", "n", "O", "o", "6"],
+    55 : ["P", "p", "R", "r", "S", "s", "7"],
+    56 : ["T", "t", "U", "u", "V", "v", "8"],
+    57 : ["W", "w", "X", "x", "Y", "y", "9"]
+  };
+
+  display(4, $("#line-4").text().slice(0, -1));
+  display(4, $("#line-4").text() + alphaKeys[currentKey][alphaHitCount++]);
+
+  if(alphaKeys[currentKey].length == alphaHitCount) { alphaHitCount = 0; }
+}
+
+function backspace(){
+  if($("#line-4").text().length > 2){
+    display(4, $("#line-4").text().slice(0, -1));
+    
+    alphaHitCount = 0;
+
+    if($("#line-4").text().length > 2)
+      currentKey = ($("#line-4").text().slice(-1).charCodeAt(0));
+    else
+      currentKey = 0;
+  }
+}
+
 function init(){
+  currentStep = 0;
+  currentKey = 0;
+
   display(0, "MENU DE SERVIÇOS");
   display(1, "&nbsp;");
   display(2, "1. RECARGA");
@@ -116,14 +164,14 @@ function charCode(key){
       return 13;
     case "cancel":
       return 27;
-    case "hide":
-      return 666;
-    case "menu":
+    case "sharp":
+      return 35;
+    case "period":
+      return 46;
+    case "func":
       return 777;
     case "alpha":
       return 888;
-    case "hide":
-      return 999;
     default:
       return key.charCodeAt(0);
   }
