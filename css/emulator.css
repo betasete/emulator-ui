@@ -93,8 +93,12 @@ button:active{
   height: 90%;
 }
 
-.device-keyboard .left  { float: left;  }
-.device-keyboard .right { float: right; }
+.device-keyboard small{
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #555;
+}
 
 .action-key {
   color: #fff;
@@ -109,6 +113,7 @@ button:active{
 #btn-back:active  { background-color: #d0a61d; }
 #btn-enter:active { background-color: #217438; }
 
+/* Printer */
 #printer{
   float: left;
   width: 380px;
