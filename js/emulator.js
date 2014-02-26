@@ -58,7 +58,7 @@ $(document).ready(function() {
       return;
     }
 
-    if(keyCode != 8 && keyCode != 13 && keyCode != 35 && keyCode != 46 && keyCode != 777 && keyCode != 888){
+    if(keyCode != 8 && keyCode != 13 && keyCode != 777 && keyCode != 888){
       currentKey = keyCode;
       alphaHitCount = 0;
     }
@@ -69,6 +69,12 @@ $(document).ready(function() {
         break;
       case 27:
         init();
+        break;
+      case 35:
+        display(4, $("#line-4").text() + '#');
+        break;
+      case 46:
+        display(4, $("#line-4").text() + '.');
         break;
       case 48:
         display(4, $("#line-4").text() + '0');
@@ -101,7 +107,7 @@ $(document).ready(function() {
         display(4, $("#line-4").text() + '9');
         break;
       case 888:
-        if(currentKey > 0) handleAlphaKey();
+        if(currentKey > 0 && currentKey != 35) handleAlphaKey();
       default:
         return;
      }
